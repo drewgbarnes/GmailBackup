@@ -57,15 +57,15 @@ for emailid in items:
         while(True):
             try:
                 os.path.getsize(save_string)
-                print("Successful getsize")
+                #print("Successful getsize")
                 break
             except OSError as e:
                 if e.errno == 63:
                     save_string = save_string.replace(subj_copy, subj_copy[:len(subj_copy)-counter])
                     subj_copy = subj_copy[:len(subj_copy)-counter]
                     counter+=1
-                    print("COunter: "+str(counter))
-                    print("save_string:"+save_string)
+                    #print("COunter: "+str(counter))
+                    #print("save_string:"+save_string)
                     continue
                 else:
                     #resize should be done
@@ -104,7 +104,7 @@ for emailid in items:
             fp.close()
             print("SAVED ATTACHMENT: " + filename + "from email: "+ emailid)
         else:
-            print("SKIPPED ATTACHMENT: "+ filename + "----from email: "+ emailid+"...already exists")
+            print("SKIPPED ATTACHMENT: "+ filename + "----from email: "+ emailid+"...already exists in folder")
 
 m.close()
 m.logout
